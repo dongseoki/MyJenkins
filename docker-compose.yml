@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    container_name: jenkins
+    restart: always
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    environment:
+      - TZ=Asia/Seoul
+      - DOCKER_TLS_CERTDIR=/certs
+    volumes:
+      - /home/ezpmp/jenkins_docker/certs:/certs/client
+      - /home/ezpmp/jenkins_docker/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    user: root
