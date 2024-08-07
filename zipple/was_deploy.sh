@@ -22,11 +22,11 @@ echo 'remove old images'
 # pass
 cd ${DOCKER_COMPOSE_PATH}
 
-echo 'stop ${SERVICE_NAME}'
+echo "stop ${SERVICE_NAME}"
 docker stop ${DOCKER_CONTAINER_NAME}
 sleep 8
 
-echo 'start ${SERVICE_NAME} (docker compose up -d)'
+echo "start ${SERVICE_NAME} (docker compose up -d)
 docker compose up -d
 
 echo ">  ${SERVICE_NAME} dev deploy end"
